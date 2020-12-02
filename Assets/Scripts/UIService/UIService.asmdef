@@ -1,0 +1,33 @@
+{
+    "name": "UIService",
+    "references": [
+        "UniRx",
+        "LSInjector",
+        "RAConnectionService",
+        "Utils",
+        "UnityService",
+        "WebRTC",
+        "WebRTCCoreService",
+        "MessengerService",
+        "RoomService",
+        "Unity.Addressables",
+        "Unity.ResourceManager",
+        "InputService",
+        "VisualMarkersService",
+        "VersionService",
+        "FilesService",
+        "FeaturesService",
+        "RAUserDataService",
+        "RenderService",
+        "DeviceInfoService"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

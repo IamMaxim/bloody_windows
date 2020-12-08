@@ -18,7 +18,7 @@ MonoBehaviour:
   m_GUID: c71678a6297c847a4abb2498dcff5d54
   m_SerializeEntries:
   - m_GUID: 2bd17b38704ff4b869c7ac3e118779d6
-    m_Address: Assets/Prefabs/UIServiceRoot.prefab
+    m_Address: UIServiceRoot
     m_ReadOnly: 0
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}

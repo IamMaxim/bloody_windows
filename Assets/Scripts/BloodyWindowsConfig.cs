@@ -1,6 +1,6 @@
 using LS.LSInjector;
 
-public class RemoteAssistantConfig : LSInjectorConfig
+public class BloodyWindowsConfig : LSInjectorConfig
 {
     public override void Setup(LSInjector injector)
     {

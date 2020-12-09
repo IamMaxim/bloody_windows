@@ -1,13 +1,12 @@
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using JetBrains.Annotations;
 using UnityEngine;
 using Debug = UnityEngine.Debug;
 
 
-namespace LS.LSInjector
+namespace LSInjector
 {
     public class LSInjector : MonoBehaviour
     {
@@ -173,12 +172,6 @@ namespace LS.LSInjector
                     _RemoveService<T>();
                     services[typeof(T)] = service;
                 }
-        }
-
-        public void AddContainer<T>(T container) where T : LSContainer
-        {
-            var newServices = container.CreateServices();
-            newServices.ForEach(AddService);
         }
 
         public void RemoveService<T>(T service) where T : LSService

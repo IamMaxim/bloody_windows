@@ -1,5 +1,4 @@
 using System.Threading.Tasks;
-using LS.LSInjector;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,7 +11,7 @@ namespace Containers.UI.UIService.ScreenStacks.CommonHandlers
 
         private void Awake()
         {
-            UIService = LSInjector.Instance.GetService<global::UIService.UIService>();
+            UIService = LSInjector.LSInjector.Instance.GetService<global::UIService.UIService>();
         }
 
         private void Start()

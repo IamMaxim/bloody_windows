@@ -1,6 +1,6 @@
 using System.Threading.Tasks;
 using JetBrains.Annotations;
-using LS.LSInjector;
+using LSInjector;
 using UIService.ScreenStacks;
 using UnityEngine;
 using UnityEngine.AddressableAssets;

@@ -99,6 +99,7 @@ namespace UIService.ScreenStacks
         /// </summary>
         public void Update()
         {
+            
             if (Input.GetKeyDown(KeyCode.Escape))
                 Pop();
         }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using JetBrains.Annotations;
 using UnityEngine;
 
-namespace LS.LSInjector
+namespace LSInjector
 {
     /// <summary>
     /// A base class for LSInjector services.

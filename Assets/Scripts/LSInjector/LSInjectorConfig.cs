@@ -1,7 +1,6 @@
-using System.Collections.Generic;
 using UnityEngine;
 
-namespace LS.LSInjector
+namespace LSInjector
 {
     public abstract class LSInjectorConfig : MonoBehaviour
     {

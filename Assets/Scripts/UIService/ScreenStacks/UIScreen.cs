@@ -1,7 +1,7 @@
 using System;
 using System.Threading.Tasks;
 using JetBrains.Annotations;
-using LS.LSInjector;
+using LSInjector;
 using UniRx;
 using UnityEngine;
 
@@ -30,7 +30,7 @@ namespace Containers.UI.UIService.ScreenStacks
         private void Start()
         {
             if (UIService == null)
-                UIService = LSInjector.Instance.GetService<global::UIService.UIService>();
+                UIService = LSInjector.LSInjector.Instance.GetService<global::UIService.UIService>();
         }
 
         /// <summary>
@@ -39,7 +39,7 @@ namespace Containers.UI.UIService.ScreenStacks
         public async Task Push()
         {
             if (UIService == null)
-                UIService = LSInjector.Instance.GetService<global::UIService.UIService>();
+                UIService = LSInjector.LSInjector.Instance.GetService<global::UIService.UIService>();
 
             (await UIService.GetScreenStack()).Push(this);
         }
@@ -47,7 +47,7 @@ namespace Containers.UI.UIService.ScreenStacks
         public async Task Pop()
         {
             if (UIService == null)
-                UIService = LSInjector.Instance.GetService<global::UIService.UIService>();
+                UIService = LSInjector.LSInjector.Instance.GetService<global::UIService.UIService>();
 
             var screenStack = await UIService.GetScreenStack();
     
@@ -82,7 +82,7 @@ namespace Containers.UI.UIService.ScreenStacks
         public async Task ForcePop()
         {
             if (UIService == null)
-                UIService = LSInjector.Instance.GetService<global::UIService.UIService>();
+                UIService = LSInjector.LSInjector.Instance.GetService<global::UIService.UIService>();
 
             var screenStack = await UIService.GetScreenStack();
     
@@ -96,7 +96,7 @@ namespace Containers.UI.UIService.ScreenStacks
         // Just a convenient wrapper for getting services from LSInjector
         [CanBeNull]
         protected T SafeGetService<T>() where T : LSService =>
-            LSInjector.Instance.GetService<T>();
+            LSInjector.LSInjector.Instance.GetService<T>();
 
         // Just a convenient wrapper for getting services from LSInjector
         protected T GetService<T>() where T : LSService

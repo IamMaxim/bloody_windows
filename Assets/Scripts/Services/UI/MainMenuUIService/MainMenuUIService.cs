@@ -1,4 +1,4 @@
-using LS.LSInjector;
+using LSInjector;
 
 namespace Services.UI.MainMenuUIService
 {

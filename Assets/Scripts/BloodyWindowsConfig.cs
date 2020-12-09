@@ -1,8 +1,8 @@
-using LS.LSInjector;
+using LSInjector;
 
 public class BloodyWindowsConfig : LSInjectorConfig
 {
-    public override void Setup(LSInjector injector)
+    public override void Setup(LSInjector.LSInjector injector)
     {
         injector.AddService(new UIService.UIService());
 

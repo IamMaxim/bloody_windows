@@ -13,7 +13,7 @@ namespace UIService.ScreenStacks
     /// </summary>
     public class UIScreen : MonoBehaviour
     {
-        public global::UIService.UIService UIService;
+        public UIService UIService;
 
         /// <summary>
         /// Fired when this screen becomes active on the screen stack (either it is pushed to it or screen above is
@@ -30,7 +30,7 @@ namespace UIService.ScreenStacks
         private void Start()
         {
             if (UIService == null)
-                UIService = LSInjector.LSInjector.Instance.GetService<global::UIService.UIService>();
+                UIService = LSInjector.LSInjector.Instance.GetService<UIService>();
         }
 
         /// <summary>
@@ -39,7 +39,7 @@ namespace UIService.ScreenStacks
         public async Task Push()
         {
             if (UIService == null)
-                UIService = LSInjector.LSInjector.Instance.GetService<global::UIService.UIService>();
+                UIService = LSInjector.LSInjector.Instance.GetService<UIService>();
 
             (await UIService.GetScreenStack()).Push(this);
         }
@@ -47,7 +47,7 @@ namespace UIService.ScreenStacks
         public async Task Pop()
         {
             if (UIService == null)
-                UIService = LSInjector.LSInjector.Instance.GetService<global::UIService.UIService>();
+                UIService = LSInjector.LSInjector.Instance.GetService<UIService>();
 
             var screenStack = await UIService.GetScreenStack();
     
@@ -82,7 +82,7 @@ namespace UIService.ScreenStacks
         public async Task ForcePop()
         {
             if (UIService == null)
-                UIService = LSInjector.LSInjector.Instance.GetService<global::UIService.UIService>();
+                UIService = LSInjector.LSInjector.Instance.GetService<UIService>();
 
             var screenStack = await UIService.GetScreenStack();
     

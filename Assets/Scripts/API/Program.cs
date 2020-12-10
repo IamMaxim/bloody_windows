@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using UnityEngine;
 
 namespace API
 {
@@ -16,13 +16,13 @@ namespace API
             //await a.CreateUser("Insaf", "aaaaaaa@ssss.ru", "prettypassword");
             //User newUser = await a.CreateUser("Vitaliy", "aaa@ssss.ru", "prettypassword");
             Token b = await a.GetToken("Insaf", "aaaaaaa@ssss.ru", "prettypassword");
-            Console.WriteLine(b.access);
+            Debug.LogError(b.access);
             string accessToken = b.access;
             List<Profile> pr = await a.SearchUser(accessToken, "Insaf");
             Profile profile = await a.SubmitPlay(accessToken, "5", "true", "204", "1");
-            Console.WriteLine(1);
-            Console.WriteLine(profile.hours_played);
-            Console.WriteLine(2);
+            Debug.LogError(1);
+            Debug.LogError(profile.hours_played);
+            Debug.LogError(2);
             profile = await a.AddFriend(accessToken, "Vitaliy");
             profile = await a.MyProfile(accessToken);
             profile = await a.UpdateProfile(accessToken, "Inno", "",
@@ -66,8 +66,8 @@ namespace API
             }
             catch (HttpRequestException e)
             {
-                Console.WriteLine("\nException Caught!");
-                Console.WriteLine("Message :{0} ", e.Message);
+                Debug.LogError("Exception Caught!");
+                Debug.LogError("Message {e.Message}");
             }
 
             return null;
@@ -88,8 +88,8 @@ namespace API
             }
             catch (HttpRequestException e)
             {
-                Console.WriteLine("\nException Caught!");
-                Console.WriteLine("Message :{0} ", e.Message);
+                Debug.LogError("Exception Caught!");
+                Debug.LogError("Message {e.Message}");
             }
 
             return null;
@@ -103,14 +103,14 @@ namespace API
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
                 HttpResponseMessage response = await client.GetAsync(url);
                 string responseBody = await response.Content.ReadAsStringAsync();
-                Console.WriteLine(responseBody);
+                Debug.LogError(responseBody);
                 List<Profile> profiles = JsonConvert.DeserializeObject<List<Profile>>(responseBody);
                 return profiles;
             }
             catch (HttpRequestException e)
             {
-                Console.WriteLine("\nException Caught!");
-                Console.WriteLine("Message :{0} ", e.Message);
+                Debug.LogError("Exception Caught!");
+                Debug.LogError("Message {e.Message}");
             }
 
             return null;
@@ -136,8 +136,8 @@ namespace API
             }
             catch (HttpRequestException e)
             {
-                Console.WriteLine("\nException Caught!");
-                Console.WriteLine("Message :{0} ", e.Message);
+                Debug.LogError("Exception Caught!");
+                Debug.LogError("Message {e.Message}");
             }
 
             return null;
@@ -159,8 +159,8 @@ namespace API
             }
             catch (HttpRequestException e)
             {
-                Console.WriteLine("\nException Caught!");
-                Console.WriteLine("Message :{0} ", e.Message);
+                Debug.LogError("Exception Caught!");
+                Debug.LogError("Message {e.Message}");
             }
 
             return null;
@@ -179,8 +179,8 @@ namespace API
             }
             catch (HttpRequestException e)
             {
-                Console.WriteLine("\nException Caught!");
-                Console.WriteLine("Message :{0} ", e.Message);
+                Debug.LogError("Exception Caught!");
+                Debug.LogError("Message {e.Message}");
             }
 
             return null;
@@ -205,8 +205,8 @@ namespace API
             }
             catch (HttpRequestException e)
             {
-                Console.WriteLine("\nException Caught!");
-                Console.WriteLine("Message :{0} ", e.Message);
+                Debug.LogError("Exception Caught!");
+                Debug.LogError("Message {e.Message}");
             }
 
             return null;
@@ -225,8 +225,8 @@ namespace API
             }
             catch (HttpRequestException e)
             {
-                Console.WriteLine("\nException Caught!");
-                Console.WriteLine("Message :{0} ", e.Message);
+                Debug.LogError("Exception Caught!");
+                Debug.LogError("Message: {e.Message}");
             }
 
             return null;

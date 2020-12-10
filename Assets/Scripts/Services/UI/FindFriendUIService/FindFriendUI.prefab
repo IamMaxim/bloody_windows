@@ -191,7 +191,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e36f65256984a4a94bf3d74b1d821aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  username: {fileID: 1474997610245960208}
   addFriendButton: {fileID: 4374323143705028868}
+  UserInfoUI: {fileID: 0}
 --- !u!1001 &2447599041035766496
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -650,3 +652,15 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 5440700138714120034}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1474997610245960208 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6915560290905722226, guid: 95de9174a717c4a7ba7b4fc4eed694b4,
+    type: 3}
+  m_PrefabInstance: {fileID: 5440700138714120034}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d199490a83bb2b844b9695cbf13b01ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

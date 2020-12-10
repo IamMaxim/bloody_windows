@@ -18,7 +18,7 @@ namespace Services.UI.PopupUIService
             popupPrefab = await initTask;
         }
 
-        public async void ShowPopup(string message)
+        public async Task ShowPopup(string message)
         {
             await initTask;
             var popup = Object.Instantiate(popupPrefab);

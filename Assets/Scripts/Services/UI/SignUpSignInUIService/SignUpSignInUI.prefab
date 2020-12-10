@@ -611,6 +611,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e34980975f24c90b0f37b5307957b09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Title: {fileID: 1726833597691950697}
   LoginField: {fileID: 1801800053116464397}
   PasswordField: {fileID: 8547075873255516755}
   SignButton: {fileID: 8689470566162222751}

@@ -9,6 +9,7 @@ namespace Services.UI.SignUpSignInUIService
 {
     public class SignUpSignInUI : UIScreen
     {
+        public Text Title;
         public InputField LoginField;
         public InputField PasswordField;
         public Button SignButton;
@@ -32,7 +33,7 @@ namespace Services.UI.SignUpSignInUIService
             SignButton.onClick.AddListener(async () =>
             {
                 await Sign();
-                
+                await MainMenu.Push();
             });
         }
 
@@ -59,6 +60,7 @@ namespace Services.UI.SignUpSignInUIService
             if (isSignUp)
             {
                 // Switch to sign in
+                Title.text = "Sign In";
                 SignButton.GetComponentInChildren<Text>().text = "Sign In";
                 SwitchButton.GetComponentInChildren<Text>().text = "Sign Up instead";
                 isSignUp = false;
@@ -66,6 +68,7 @@ namespace Services.UI.SignUpSignInUIService
             else
             {
                 // Switch to sign up
+                Title.text = "Sign Up";
                 SignButton.GetComponentInChildren<Text>().text = "Sign Up";
                 SwitchButton.GetComponentInChildren<Text>().text = "Sign In instead";
                 isSignUp = true;

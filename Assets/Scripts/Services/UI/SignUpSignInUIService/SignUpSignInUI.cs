@@ -3,6 +3,7 @@ using API;
 using Services.UI.MainMenuUIService;
 using UIService.ScreenStacks;
 using UniRx;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace Services.UI.SignUpSignInUIService
@@ -17,7 +18,7 @@ namespace Services.UI.SignUpSignInUIService
 
         public MainMenuUI MainMenu;
 
-        private bool isSignUp = false;
+        private bool isSignUp = true;
 
 
         private void Awake()
@@ -45,7 +46,7 @@ namespace Services.UI.SignUpSignInUIService
             if (isSignUp)
             {
                 var user = await OSU.Instance.CreateUser(LoginField.text, "example@example.com", PasswordField.text);
-                var token = await OSU.Instance.GetToken(user.username, user.email, PasswordField.text);
+                var token = await OSU.Instance.GetToken(LoginField.text, "example@example.com", PasswordField.text);
                 OSU.Token = token;
                 OSU.Username = user.username;
             }
@@ -55,6 +56,9 @@ namespace Services.UI.SignUpSignInUIService
                 OSU.Token = token;
                 OSU.Username = LoginField.text;
             }
+            
+            Debug.Log($"Token: {OSU.Token.access}");
+            Debug.Log($"Username: {OSU.Username}");
         }
 
         public void SwitchMode()

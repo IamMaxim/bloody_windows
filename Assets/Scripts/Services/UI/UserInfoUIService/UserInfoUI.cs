@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Threading.Tasks;
 using API;
 using UIService.ScreenStacks;
@@ -18,22 +19,20 @@ namespace Services.UI.UserInfoUIService
             var popupService = LSInjector.LSInjector.Instance.GetService<PopupUIService.PopupUIService>();
 
             Username.text = profile.user;
-            UserInfoText.text = $"Hours played: {profile.hours_played}" +
-                                $"Location: {profile.location}" +
-                                $"Map plays: {profile.map_plays}" +
-                                $"Succ. map plays: {profile.successful_map_plays}" +
+            UserInfoText.text = $"Hours played: {profile.hours_played}\n" +
+                                $"Location: {profile.location}\n" +
+                                $"Map plays: {profile.map_plays}\n" +
+                                $"Succ. map plays: {profile.successful_map_plays}\n" +
                                 $"Total score: {profile.total_score}";
 
-            var myProfile = await OSU.Instance.MyProfile(OSU.Token.access);
-
-            if (profile.user == myProfile.user)
+            if (profile.user == OSU.Username)
             {
                 // Handle self
                 AddToFriendsButton.enabled = false;
             }
             else
             {
-                if (profile.friends.Contains(myProfile.user))
+                if (profile.friends.Contains(OSU.Username))
                 {
                     // Handle friend
                     AddToFriendsButton.enabled = false;
@@ -53,7 +52,16 @@ namespace Services.UI.UserInfoUIService
 
             ShowFriendsList.onClick.RemoveAllListeners();
             ShowFriendsList.onClick.AddListener(async () =>
-                await popupService.ShowPopup(string.Join("\n", profile.friends)));
+                {
+                    var tasks = await Task.WhenAll(profile.friends.Select(id =>
+                        OSU.Instance.SearchUser(OSU.Token.access)));
+
+                    await popupService.ShowPopup(string.Join("\n",
+                            tasks.Select(t => t.First().user)
+                        )
+                    );
+                }
+            );
 
             await Push();
         }

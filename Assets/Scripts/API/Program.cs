@@ -61,6 +61,7 @@ namespace API
                 var url = URL + "auth/jwt/create/";
                 HttpResponseMessage response = await client.PostAsync(url, data);
                 string responseBody = await response.Content.ReadAsStringAsync();
+                Debug.Log($"response: {responseBody}");
                 Token token = JsonConvert.DeserializeObject<Token>(responseBody);
                 return token;
             }
@@ -83,6 +84,7 @@ namespace API
                 var url = URL + "auth/users/";
                 HttpResponseMessage response = await client.PostAsync(url, data);
                 string responseBody = await response.Content.ReadAsStringAsync();
+                Debug.Log($"response: {responseBody}");
                 User user = JsonConvert.DeserializeObject<User>(responseBody);
                 return user;
             }
@@ -103,7 +105,7 @@ namespace API
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
                 HttpResponseMessage response = await client.GetAsync(url);
                 string responseBody = await response.Content.ReadAsStringAsync();
-                Debug.LogError(responseBody);
+                Debug.Log($"response: {responseBody}");
                 List<Profile> profiles = JsonConvert.DeserializeObject<List<Profile>>(responseBody);
                 return profiles;
             }
@@ -131,6 +133,7 @@ namespace API
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
                 HttpResponseMessage response = await client.PutAsync(url, null);
                 string responseBody = await response.Content.ReadAsStringAsync();
+                Debug.Log($"response: {responseBody}");
                 Profile profile = JsonConvert.DeserializeObject<Profile>(responseBody);
                 return profile;
             }
@@ -154,6 +157,7 @@ namespace API
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
                 HttpResponseMessage response = await client.PutAsync(url, null);
                 string responseBody = await response.Content.ReadAsStringAsync();
+                Debug.Log($"response: {responseBody}");
                 Profile profile = JsonConvert.DeserializeObject<Profile>(responseBody);
                 return profile;
             }
@@ -174,6 +178,7 @@ namespace API
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
                 HttpResponseMessage response = await client.GetAsync(url);
                 string responseBody = await response.Content.ReadAsStringAsync();
+                Debug.Log($"response: {responseBody}");
                 Profile profile = JsonConvert.DeserializeObject<Profile>(responseBody);
                 return profile;
             }
@@ -200,6 +205,7 @@ namespace API
                 var data = new StringContent(json, Encoding.UTF8, "application/json");
                 HttpResponseMessage response = await client.PutAsync(url, data);
                 string responseBody = await response.Content.ReadAsStringAsync();
+                Debug.Log($"response: {responseBody}");
                 Profile profile = JsonConvert.DeserializeObject<Profile>(responseBody);
                 return profile;
             }
@@ -220,6 +226,7 @@ namespace API
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
                 HttpResponseMessage response = await client.GetAsync(url);
                 string responseBody = await response.Content.ReadAsStringAsync();
+                Debug.Log($"response: {responseBody}");
                 List<Play> plays = JsonConvert.DeserializeObject<List<Play>>(responseBody);
                 return plays;
             }

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Containers.UI.UIService.Utils
+namespace UIService.Utils
 {
     public class UIRotator : MonoBehaviour
     {

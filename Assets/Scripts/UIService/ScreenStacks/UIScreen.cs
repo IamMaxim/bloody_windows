@@ -5,7 +5,7 @@ using LSInjector;
 using UniRx;
 using UnityEngine;
 
-namespace Containers.UI.UIService.ScreenStacks
+namespace UIService.ScreenStacks
 {
     /// <summary>
     /// Should be attached to all screens in the canvas.

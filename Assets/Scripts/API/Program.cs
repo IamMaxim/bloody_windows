@@ -37,6 +37,7 @@ namespace API
 
         public static OSU Instance = new OSU();
         public static Token Token;
+        public static string Username;
 
 
         public OSU()

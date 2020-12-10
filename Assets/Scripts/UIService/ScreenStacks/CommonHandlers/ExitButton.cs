@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-namespace Containers.UI.UIService.ScreenStacks.CommonHandlers
+namespace UIService.ScreenStacks.CommonHandlers
 {
     public class ExitButton : MonoBehaviour
     {

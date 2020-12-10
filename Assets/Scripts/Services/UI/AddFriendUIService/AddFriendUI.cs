@@ -1,5 +1,4 @@
-using Containers.UI.UIService.ScreenStacks;
-using UnityEngine;
+using UIService.ScreenStacks;
 
 namespace Services.UI.AddFriendUIService
 {

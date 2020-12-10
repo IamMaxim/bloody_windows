@@ -1,12 +1,11 @@
 ﻿// Source: https://answers.unity.com/questions/849739/submit-inputfield-when-enter-is-clicked.html
 
-using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-namespace Containers.UI.UIService.Utils
+namespace UIService.Utils
 {
     /// <summary>Submits an InputField with the specified button.</summary>
     // Prevents MonoBehaviour of same type (or subtype) to be added more than once to a GameObject.

@@ -1,7 +1,7 @@
 using System.Threading.Tasks;
 using API;
-using Containers.UI.UIService.ScreenStacks;
 using Services.UI.MainMenuUIService;
+using UIService.ScreenStacks;
 using UniRx;
 using UnityEngine.UI;
 
@@ -47,11 +47,13 @@ namespace Services.UI.SignUpSignInUIService
                 var user = await OSU.Instance.CreateUser(LoginField.text, "example@example.com", PasswordField.text);
                 var token = await OSU.Instance.GetToken(user.username, user.email, PasswordField.text);
                 OSU.Token = token;
+                OSU.Username = user.username;
             }
             else
             {
                 var token = await OSU.Instance.GetToken(LoginField.text, "example@example.com", PasswordField.text);
                 OSU.Token = token;
+                OSU.Username = LoginField.text;
             }
         }
 

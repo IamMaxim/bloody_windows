@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3886957751874051018}
   - component: {fileID: 3886957751874051020}
   - component: {fileID: 3886957751874051021}
-  - component: {fileID: 3886957751874051023}
+  - component: {fileID: 6905387707419654253}
   m_Layer: 5
   m_Name: MapCompletionUI
   m_TagString: Untagged
@@ -78,7 +78,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &3886957751874051023
+--- !u!114 &6905387707419654253
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -87,7 +87,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3886957751874051019}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9a661fad6344280a3e731fcd2c7e1f6, type: 3}
+  m_Script: {fileID: 11500000, guid: 2a940ef300664cb48cb1ea73e1ce5c15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &8315016362930751721

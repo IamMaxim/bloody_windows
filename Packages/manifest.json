@@ -1,5 +1,13 @@
 {
+  "scopedRegistries": [
+    {
+      "name": "Packages from jillejr",
+      "url": "https://npm.cloudsmith.io/jillejr/newtonsoft-json-for-unity/",
+      "scopes": ["jillejr"]
+    }
+  ],
   "dependencies": {
+    "jillejr.newtonsoft.json-for-unity": "12.0.201",
     "com.unity.2d.common": "2.0.2",
     "com.unity.2d.path": "2.0.6",
     "com.unity.2d.pixel-perfect": "2.0.4",

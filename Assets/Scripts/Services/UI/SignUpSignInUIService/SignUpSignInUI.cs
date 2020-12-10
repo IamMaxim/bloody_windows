@@ -1,7 +1,8 @@
-using System;
+using System.Threading.Tasks;
+using API;
 using Containers.UI.UIService.ScreenStacks;
+using Services.UI.MainMenuUIService;
 using UniRx;
-using UnityEngine;
 using UnityEngine.UI;
 
 namespace Services.UI.SignUpSignInUIService
@@ -12,6 +13,8 @@ namespace Services.UI.SignUpSignInUIService
         public InputField PasswordField;
         public Button SignButton;
         public Button SwitchButton;
+
+        public MainMenuUI MainMenu;
 
         private bool isSignUp = false;
 
@@ -26,12 +29,29 @@ namespace Services.UI.SignUpSignInUIService
 
             SwitchButton.onClick.AddListener(SwitchMode);
 
-            SignButton.onClick.AddListener(Sign);
+            SignButton.onClick.AddListener(async () =>
+            {
+                await Sign();
+                
+            });
         }
 
-        public void Sign()
+        public async Task Sign()
         {
-            throw new NotImplementedException();
+            if (LoginField.text == "" || PasswordField.text == "")
+                return;
+
+            if (isSignUp)
+            {
+                var user = await OSU.Instance.CreateUser(LoginField.text, "example@example.com", PasswordField.text);
+                var token = await OSU.Instance.GetToken(user.username, user.email, PasswordField.text);
+                OSU.Token = token;
+            }
+            else
+            {
+                var token = await OSU.Instance.GetToken(LoginField.text, "example@example.com", PasswordField.text);
+                OSU.Token = token;
+            }
         }
 
         public void SwitchMode()

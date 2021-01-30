@@ -106,4 +106,29 @@ namespace API
             this.access = access;
         }
     }
+
+    public class MetaData
+    {
+        public string id;
+        public string title;
+        public string successPlays;
+        public string downloads;
+        public string mapStorageID;
+        public string duration;
+        public string difficulty;
+
+        public MetaData(string id, string title, string  successPlays, 
+            string downloads, string mapStorageId, string duration, string difficulty)
+        {
+            this.id = id;
+            this.title = title;
+            this.successPlays = successPlays;
+            this.downloads = downloads;
+            this.mapStorageID = mapStorageId;
+            this.duration = duration;
+            this.difficulty = difficulty;
+        }
+        
+        
+    }
 }

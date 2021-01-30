@@ -119,6 +119,28 @@ namespace API
         }
 
 
+        public async Task<Profile> GetUser(string accessToken, string userID)
+        {
+            try
+            {
+                var url = URL + $"profile/{userID}";
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
+                HttpResponseMessage response = await client.GetAsync(url);
+                string responseBody = await response.Content.ReadAsStringAsync();
+                Debug.Log($"response: {responseBody}");
+                Profile profile = JsonConvert.DeserializeObject<Profile>(responseBody);
+                return profile;
+            }
+            catch (HttpRequestException e)
+            {
+                Debug.LogError("Exception Caught!");
+                Debug.LogError("Message {e.Message}");
+            }
+
+            return null;
+        }
+
+
         public async Task<Profile> SubmitPlay(string accessToken, string length, string passed, string score,
             string mapid)
         {

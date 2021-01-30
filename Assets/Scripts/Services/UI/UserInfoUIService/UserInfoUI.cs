@@ -54,10 +54,10 @@ namespace Services.UI.UserInfoUIService
             ShowFriendsList.onClick.AddListener(async () =>
                 {
                     var tasks = await Task.WhenAll(profile.friends.Select(id =>
-                        OSU.Instance.SearchUser(OSU.Token.access)));
+                        OSU.Instance.GetUser(OSU.Token.access, id)));
 
                     await popupService.ShowPopup(string.Join("\n",
-                            tasks.Select(t => t.First().user)
+                            tasks.Select(t => t.user)
                         )
                     );
                 }
